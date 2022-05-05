@@ -113,6 +113,8 @@ public class InstancedMeshDrawer : MonoBehaviour
         _previousLocalToWorld = transform.localToWorldMatrix;
     }
 
+    // OnRenderObject名字挺有迷惑性的。。
+    // 实际上它是指OnPostRender，渲染完场景以后才开始执行
     void OnRenderObject()
     {
         if (_mesh == null) return;
@@ -131,6 +133,7 @@ public class InstancedMeshDrawer : MonoBehaviour
             // Build and execute the motion vector rendering pass.
             _motionVectorsPass.Clear();
             if (camera.allowMSAA && camera.actualRenderingPath == RenderingPath.Forward)
+                //实质上是R16G16_typeles
                 _motionVectorsPass.SetRenderTarget(BuiltinRenderTextureType.MotionVectors);
             else
                 _motionVectorsPass.SetRenderTarget(BuiltinRenderTextureType.MotionVectors, BuiltinRenderTextureType.CameraTarget);

@@ -137,7 +137,7 @@ namespace Kino
                 _material.SetInt("_RowCount", rows);
                 _material.SetFloat("_Amplitude", _motionVectorsAmplitude);
                 _material.SetPass(5);
-                Graphics.DrawProcedural(MeshTopology.Lines, cols * rows * 6, 1);
+                Graphics.DrawProceduralNow(MeshTopology.Lines, cols * rows * 6, 1);
             }
         }
 

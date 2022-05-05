@@ -1,3 +1,3 @@
 [submodule "Assets/PostProcessing"]
 	path = Assets/PostProcessing
-	url = https://github.com/keijiro/PostProcessing.git
+	url = git@github.com:BlurryLight/PostProcessing-v2.git
